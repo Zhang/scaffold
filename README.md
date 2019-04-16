@@ -4,6 +4,8 @@ A starter pack for React, Express,Webpack, SASS, and MySQL applications built to
 
 ## Instructions
 
-`npm start`
+`npm install`
 
-`npm run server`
+`npm run compile:all`
+
+`npm start`

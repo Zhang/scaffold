@@ -3716,7 +3716,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! @babel/polyfill */"./node_modules/@babel/polyfill/lib/index.js");
-module.exports = __webpack_require__(/*! /Users/akambale/Desktop/mysite/src/client/App.jsx */"./src/client/App.jsx");
+module.exports = __webpack_require__(/*! /Users/akambale/Desktop/scaffold/src/client/App.jsx */"./src/client/App.jsx");
 
 
 /***/ })
