@@ -15,6 +15,8 @@ class App extends Component {
     this.hideForm = this.hideForm.bind(this);
   }
 
+  // This hide and show form code was intended to shift views
+  // as the user had uploaded or selected an existing form or not
   makeFormVisible() {
     this.setState({
       formVisible: true,

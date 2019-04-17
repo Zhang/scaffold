@@ -40,13 +40,21 @@
 
   &__save-btn {
     border-radius: 3px;
-    padding: 5px 5px 5px 20px;
+    padding: 2px;
     background-color: rgb(186, 86, 86);
-    font-weight: bold;
-    border: 1px black;
+    font-weight: bolder;
+    border: solid 2px black;
   }
 
   &__id-box {
     width: 65px;
   }
+}
+
+.saved_input_box {
+  height: 15px;
+  width: 150px;
+  background-color: rgb(0, 0, 208);
+  position: absolute;
+  z-index: 10;
 }

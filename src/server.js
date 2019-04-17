@@ -25,6 +25,10 @@ const upload = multer({
   // you might also want to set some limits: https://github.com/expressjs/multer#limits
 });
 
+// Found an NPM package to handle the receiving and writing of image files
+// Abandoned this quickly to focus on building client and UI because package
+// was unfamiliar and I started running into some challenging errors
+
 app.post('/upload', upload.single('file'), (req, res) => {
   const tempPath = req.file.path;
   const targetPath = `${dest}/image.jpeg`;

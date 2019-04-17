@@ -6,27 +6,25 @@ export default class InteractiveInputBox extends Component {
     super(props);
     this.state = {
       id: '',
-      value: '',
       positionX: '',
       positionY: '',
     };
     this.textChange = this.textChange.bind(this);
-    // this.saveForm = this.saveForm.bind(this);
   }
 
   textChange(e) {
-    console.log(e.target.name);
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
+
+  // Didn't have time to implement functionality that would update the positioning on movement
 
   render() {
     return (
       <Draggable>
         <div className='interactiveInputBox'>
           <form>
-            <input name='value' onChange={this.textChange} value={this.state.value} type='text' />
             <input
               className='interactiveInputBox__id-box'
               placeholder='give box ID'
@@ -35,7 +33,14 @@ export default class InteractiveInputBox extends Component {
               value={this.state.id}
               type='text'
             />
-            <a className='ineractiveInputBox__save-btn'>save</a>
+            <a
+              onClick={() => {
+                this.props.saveInputBox(this.state.id, this.state.positionX, this.state.positionY);
+              }}
+              className='interactiveInputBox__save-btn'
+            >
+              save
+            </a>
           </form>
         </div>
       </Draggable>

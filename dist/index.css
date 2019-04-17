@@ -43,12 +43,19 @@ body {
   background-color: #a53ea5; }
   .interactiveInputBox__save-btn {
     border-radius: 3px;
-    padding: 5px 5px 5px 20px;
+    padding: 2px;
     background-color: #ba5656;
-    font-weight: bold;
-    border: 1px black; }
+    font-weight: bolder;
+    border: solid 2px black; }
   .interactiveInputBox__id-box {
     width: 65px; }
+
+.saved_input_box {
+  height: 15px;
+  width: 150px;
+  background-color: #0000d0;
+  position: absolute;
+  z-index: 10; }
 
 div.sassyDiv {
   font-size: 3rem;
