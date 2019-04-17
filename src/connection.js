@@ -14,12 +14,12 @@ Or, if you don't want/need a background service you can just run:
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'localhost',
-  user: '-uroot',
-  // password: 'secret',
-  database: 'my_db',
+  // user: '-uroot',
+  user: 'root',
+  password: '',
 });
 
-connection.connect();
+connection.connect(() => console.log('connected to mysql'));
 
 connection.query('SELECT 1 + 1 AS solution', function(error, results, fields) {
   if (error) throw error;
@@ -27,3 +27,5 @@ connection.query('SELECT 1 + 1 AS solution', function(error, results, fields) {
 });
 
 // connection.end();
+
+module.exports = connection;
