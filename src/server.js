@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
 
-const connection = require('./connection.js');
+// const connection = require('./connection.js');
+
+const multer = require('multer');
 
 const app = express();
 
@@ -15,6 +18,34 @@ app.listen(3000, () => {
   console.log('App listening on 3000');
 });
 
-app.get('/testroute', (req, res) => {
-  res.send('this is working now and it is again');
+const dest = path.join(__dirname, './images');
+
+const upload = multer({
+  dest,
+  // you might also want to set some limits: https://github.com/expressjs/multer#limits
+});
+
+app.post('/upload', upload.single('file'), (req, res) => {
+  const tempPath = req.file.path;
+  const targetPath = `${dest}/image.jpeg`;
+
+  if (path.extname(req.file.originalname).toLowerCase() === '.jpeg') {
+    fs.rename(tempPath, targetPath, err => {
+      if (err) return handleError(err, res);
+
+      res
+        .status(200)
+        .contentType('text/plain')
+        .end('File uploaded!');
+    });
+  } else {
+    fs.unlink(tempPath, err => {
+      if (err) return handleError(err, res);
+
+      res
+        .status(403)
+        .contentType('text/plain')
+        .end('Only .jpeg files are allowed!');
+    });
+  }
 });

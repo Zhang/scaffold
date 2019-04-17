@@ -15,6 +15,41 @@ body {
     font-size: 3rem;
     color: #cc4397; }
 
+.image_container__img-box {
+  height: 1000px;
+  position: absolute;
+  z-index: 2; }
+
+.image_container__interactive {
+  height: 1000px;
+  width: 772px;
+  position: absolute;
+  z-index: 3;
+  background-color: lightblue;
+  opacity: 0.3; }
+
+.header__upload-button {
+  border-radius: 3px;
+  padding: 5px;
+  background-color: lightblue;
+  margin: 5px; }
+
+.upload_box {
+  display: inline-block; }
+
+.interactiveInputBox {
+  width: 140px;
+  padding: 5px;
+  background-color: #a53ea5; }
+  .interactiveInputBox__save-btn {
+    border-radius: 3px;
+    padding: 5px 5px 5px 20px;
+    background-color: #ba5656;
+    font-weight: bold;
+    border: 1px black; }
+  .interactiveInputBox__id-box {
+    width: 65px; }
+
 div.sassyDiv {
   font-size: 3rem;
   color: #cc4397; }

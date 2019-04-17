@@ -1,0 +1,52 @@
+.image_container {
+  // display: inline-block;
+
+  &__img-box {
+    height: 1000px;
+    // height: 100vh;
+
+    position: absolute;
+    z-index: 2;
+  }
+
+  &__interactive {
+    height: 1000px;
+    width: 772px;
+    position: absolute;
+    z-index: 3;
+    background-color: lightblue;
+    opacity: 0.3;
+  }
+}
+
+.header {
+  &__upload-button {
+    border-radius: 3px;
+    padding: 5px;
+    background-color: lightblue;
+    margin: 5px;
+  }
+}
+
+.upload_box {
+  display: inline-block;
+}
+
+.interactiveInputBox {
+  // display: inline;
+  width: 140px;
+  padding: 5px;
+  background-color: rgb(165, 62, 165);
+
+  &__save-btn {
+    border-radius: 3px;
+    padding: 5px 5px 5px 20px;
+    background-color: rgb(186, 86, 86);
+    font-weight: bold;
+    border: 1px black;
+  }
+
+  &__id-box {
+    width: 65px;
+  }
+}
