@@ -11,13 +11,13 @@ class App extends Component {
       formVisible: true,
       currentImageSrc: '/images/test-image.jpeg',
     };
-    this.makeFormVisible = this.makeFormVisible.bind(this);
     this.hideForm = this.hideForm.bind(this);
   }
 
   // This hide and show form code was intended to shift views
   // as the user had uploaded or selected an existing form or not
-  makeFormVisible() {
+  makeFormVisible = () => {
+    // Slightly differnt syntax to save some characters
     this.setState({
       formVisible: true,
     });

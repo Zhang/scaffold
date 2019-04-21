@@ -27,6 +27,10 @@ export default class FormImage extends Component {
   // this then generates a saved fake input div with the same position as the editable form box
 
   addEditableInputBox() {
+    // This is a bit of an anti-pattern in react
+    // https://web.archive.org/web/20150419023006/http://facebook.github.io/react/docs/interactivity-and-dynamic-uis.html
+    // Also, it would be a bit easier to save JSON configs of the particular input boxes
+    // That way, you'd be able to reference the input configs directly for methods like isIdUnique (rather than persisting a separate array)
     const inputBox = (
       <InteractiveInputBox
         saveInputBox={this.saveInputBox}
@@ -50,6 +54,10 @@ export default class FormImage extends Component {
         savedInputBoxes: this.state.savedInputBoxes.concat([inputBox]),
       });
     } else {
+      // Nice thinking to include this check
+      // Though, perhaps it's not necessary for the user to be able to manually set the id of the configuration
+      // And by defaulting it for them, using something as simple as
+      // `${Math.floor(Math.random() * 10000)}` can save coding effort
       alert('ID of this input box is not unique. Please change the ID before saving');
     }
   }

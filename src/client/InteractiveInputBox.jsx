@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Draggable, { DraggableCore } from 'react-draggable'; // Both at the same time
 
+// It seems like interactiveInputBox and savedInputBox could be the same component with an if statement for pre-saved cases
 export default class InteractiveInputBox extends Component {
   constructor(props) {
     super(props);
